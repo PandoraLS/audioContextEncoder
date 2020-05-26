@@ -1,6 +1,7 @@
-tensorflow_gpu==1.4.0
+tensorflow_gpu==1.15.2  # 
 librosa==0.5.1
 audioread==2.1.5
 matplotlib==2.1.0
-numpy==1.14.1
+numpy
+# numpy==1.14.1  # 在ubuntu上得用numpy==1.16,windows上才有1.14.1
 

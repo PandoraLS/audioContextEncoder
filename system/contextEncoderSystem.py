@@ -85,7 +85,7 @@ class ContextEncoderSystem(DNNSystem):
             except StopIteration:
                 print("rec End of queue!", batch_num)
                 break
-
+            print("Batch Num: ", batch_num)
             feed_dict = self._feedDict(audio, sess, False)
             reconstructed_input, original, context = sess.run([self._architecture.output(), self._architecture.target(),
                                                       self._architecture.input()],

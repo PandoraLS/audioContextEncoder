@@ -14,4 +14,5 @@ aContextEncoderArchitecture = ContextEncoderArchitecture(*Context_Encoder_parame
 aPreProcessor = MagPreAndPostProcessor(*Context_Encoder_parameters.preProcessorParameters())
 aContextEncoderSystem = ContextEncoderSystem(aContextEncoderArchitecture, Context_Encoder_parameters.batchSize(),
                                              aPreProcessor, sessionsName)
+print("基本就绪")
 aContextEncoderSystem.train("nsynth_train_w5120_g1024_h512.tfrecords", "nsynth_valid_w5120_g1024_h512.tfrecords", 1e-3)

@@ -15,7 +15,7 @@ from architecture.parameters.fullyLayerParams import FullyLayerParams
 
 architecturesParametersFile = "magnitude_network_parameters.pkl"
 
-batchSize = 256
+batchSize = 4
 signalLength = 5120
 gapLength = 1024
 fftWindowLength = 512

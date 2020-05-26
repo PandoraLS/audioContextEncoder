@@ -16,3 +16,14 @@ To train the network, execute in the parent folder `python trainMagnitudeNetwork
 ## Sound examples
 
 - To hear examples please go to the [accompanying website](https://andimarafioti.github.io/audioContextEncoder/).
+
+
+# 续lisen
+2020年05月26日15点57分：
+训练验证测试集使用的都是nsynthdataset的验证集，只是做个小demo实验
+
+
+tensorflow 1.14版本没有
+```python
+from tensorflow.contrib.signal.python.ops import window_ops
+```

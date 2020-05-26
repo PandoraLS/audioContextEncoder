@@ -1,7 +1,7 @@
 import functools
 
 import tensorflow as tf
-from tensorflow.contrib.signal.python.ops import window_ops
+# from tensorflow.contrib.signal.python.ops import window_ops
 
 __author__ = 'Andres'
 
@@ -53,14 +53,14 @@ class MagPreAndPostProcessor(object):
         return self._divideComplexIntoRealAndImag(stft)
 
     def inverseStftOfGap(self, batchOfStftOfGap):
-        window_fn = functools.partial(window_ops.hann_window, periodic=True)
+        window_fn = functools.partial(tf.signal.hann_window, periodic=True)
         inverse_window = tf.contrib.signal.inverse_stft_window_fn(self._fftWindowLength, forward_window_fn=window_fn)
         padded_gaps = tf.contrib.signal.inverse_stft(stfts=batchOfStftOfGap, frame_length=self._fftWindowLength,
                                                      frame_step=self._fftHopSize, window_fn=inverse_window)
         return padded_gaps[:, self.padding():-self.padding()]
 
     def inverseStftOfSignal(self, batchOfStftsOfSignal):
-        window_fn = functools.partial(window_ops.hann_window, periodic=True)
+        window_fn = functools.partial(tf.signal.hann_window, periodic=True)
         inverse_window = tf.contrib.signal.inverse_stft_window_fn(self._fftWindowLength, forward_window_fn=window_fn)
         return tf.contrib.signal.inverse_stft(stfts=batchOfStftsOfSignal, frame_length=self._fftWindowLength,
                                               frame_step=self._fftHopSize, window_fn=inverse_window)

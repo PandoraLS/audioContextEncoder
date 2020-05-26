@@ -1,3 +1,15 @@
 .DS_Store
 .ipynb_checkpoints
-./idea
+.idea/
+datasetGenerator/__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+
+utils/logdir/*/
+utils/saved_models/*/
+
+# data
+datasetGenerator/nysnth-valid-demo/
+
+# 文件
+*.tfrecords
